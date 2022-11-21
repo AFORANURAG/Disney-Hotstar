@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    <style>
+#container{
+    
+    
+    height: 500px;
+    padding-left: 540px;
+    }form{
+        margin-top: 80px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 40%;
+        border-radius: 20px;
+        padding-top: 20px;
+        
+        
+    } 
+input[type="email"], input[type="number"],input[type="password"]{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}h3{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+margin-left: 40px;
+margin-top: 20px;
+}input[type="submit"]{
+    width: 310px;
+    height: 45px;
+    margin-left: 40px;
+    
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+} input[type="submit"]:hover{
+    cursor: pointer;
+}h1{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+ <div id="container">
+     <form>
+        <h1>SignUp</h1>
+<h3>Email</h3>
+        <input id="email" type="email" placeholder="Enter Your Email" value=""  />
+        <!-- <h3>Phone Number</h3>
+        <input type="number" placeholder="Enter Your Phone Number" id="phonenumber" value="" > -->
+<h3>Password</h3>
+<input type="password" name="" id="Password" placeholder="Enter Your Password" value="" >
+<br>
+        <input type="submit" placeholder="SignUp"/>
+      </form>
+ </div>   
+</body>
+</html>
+
+ <script>
+//it is now the time to add functionalities into our html document to make it alive. 
+let submit=document.querySelector("form")
+submit.addEventListener("submit",myfun)
+function myfun(event){
+    event.preventDefault()
+    //let phonenumber =document.querySelector("#phonenumber").value
+    let email =document.querySelector("#email").value
+    let password1 =document.querySelector("#Password").value
+let object=JSON.stringify({
+//phonenumber,
+email,
+password1
+})
+localStorage.setItem("signupdetails", object)
+alert("SignUp Successful")
+window.location.href="Sign in page.html"
+}
+// it will overwrite because you are 
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<title>Movie App</title>
+<style>
+</style>
+</head>
+<body >
+
+<div class="topnav" id="myTopnav">
+<img style="float: left; margin-left: 20px;" src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt="">
+
+  <div class="dropdown">
+    <button class="dropbtn">TV 
+    </button>
+    <div class="dropdown-content">
+      <a href="#">othershows</a>
+      <a href="#"> hotstarspecial</a>
+      <a href="#">quix</a>
+      <a href="#">Star Jalsha</a>
+    
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Movies 
+    </button>
+    <div class="dropdown-content">
+      <a href="#">anurag</a>
+      <a href="#">upadhyay</a>
+      <a href="#">delhi</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Sports  
+    </button>
+    <div class="dropdown-content">
+      <a href="#">shazam</a>
+      <a href="#">superman</a>
+      <a href="#">bengali bhaijaan</a>
+      <a href="#">Veer Zara</a>
+      <a href="#">shaktimaan all time favourite</a>
+      <a href="#">Krish-5</a>
+    </div>
+  </div> 
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  <div class="dropdown">
+    <button class="dropbtn">Disney+  
+    </button>  
+</div>
+<div class="search">
+  <form class="search-form">
+        <input type="text" placeholder="Search" id="movie-name" oninput="debounce(searchMovies,300)">
+       <button type="" id="searchedmovies"  ><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" id="Signup" style="float: right;">Sign up 
+    </button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" id="Signin" style="float: right;">Sign in 
+    </button>
+  </div>
+</div> 
+<!-- slideshow time -->
+<div id="slideshow">
+</div>
+<button  id="sorting1">sort-lh</button>
+<button id="sorting2">sort-hl</button>
+<div id="loader"><img src="https://media3.giphy.com/media/sSgvbe1m3n93G/giphy.gif?cid=ecf05e47j6cqv0zjl51mdyqwp49lxr0m4e2bm8fdses63jb3&rid=giphy.gif&ct=g" alt="">
+</div>
+<div id="container" >
+</div>
+<script src="index.js" >
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+document.querySelector("#sorting1").addEventListener("click",function (){
+            data1.sort(function(a,b){
+            return a.rating-b.rating
+            
+            })
+            display(data1)
+        }
+        ) 
+document.querySelector("#sorting2").addEventListener("click",function (){
+    data1.sort(function(a,b){
+    return b.rating-a.rating  
+    })
+    display(data1)
+    }
+    
+) 
+document.querySelector("#Signup").addEventListener("click",function(){
+    window.location.href="Sign up.html"
+})
+document.querySelector("#Signin").addEventListener("click",function(){
+    window.location.href="Sign in page.html"
+        })   
+</script>
+</body>
+</html>
+
