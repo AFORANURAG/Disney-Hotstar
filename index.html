@@ -4,9 +4,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css">
+
 <title>Movie App</title>
 <style>
+.underimage{
+  width: 100%;
+  height: 600px;
+}
 </style>
+
+
 </head>
 <body >
 
@@ -50,39 +58,48 @@
     <button class="dropbtn">Disney+  
     </button>  
 </div>
-<div class="search">
-  <form class="search-form">
-        <input type="text" placeholder="Search" id="movie-name" oninput="debounce(searchMovies,300)">
-       <button type="" id="searchedmovies"  ><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
-  </div>
+
   <div class="dropdown">
-    <button class="dropbtn" id="Signup" style="float: right;">Sign up 
+    <button class="dropbtn" id="Signup" >Sign up 
     </button>
   </div>
   <div class="dropdown">
     <button class="dropbtn" id="Signin" style="float: right;">Sign in 
     </button>
   </div>
+  <div class="search">
+    <form class="search-form">
+          <input type="text" placeholder="Search" value="hulk" id="movie-name" oninput="debounce(searchMovies,300)">
+         <button type="" id="searchedmovies"  ><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
 </div> 
 <!-- slideshow time -->
-<div id="slideshow">
+
+<div class="splide">
+  <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide" data-splide-interval="2500"><img class="underimage" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6451/1376451-h-66d561b15e4e" alt=""></li>
+          <li class="splide__slide" data-splide-interval="2500"><img class="underimage" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/927/1360927-h-375c5733d218" alt=""></li>
+          <li class="splide__slide" data-splide-interval="2500"><img class="underimage" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/old_images/SHOW/152/152/152-h" alt=""></li>
+      
+          
+<!-- we only have one page so don't worry much about -->
+        </ul>
+  </div>
+
+  <div class="splide__progress">
+        <div class="splide__progress__bar">
+        </div>
+  </div>
 </div>
-<button  id="sorting1">sort-lh</button>
-<button id="sorting2">sort-hl</button>
+
 <div id="loader"><img src="https://media3.giphy.com/media/sSgvbe1m3n93G/giphy.gif?cid=ecf05e47j6cqv0zjl51mdyqwp49lxr0m4e2bm8fdses63jb3&rid=giphy.gif&ct=g" alt="">
 </div>
 <div id="container" >
 </div>
 <script src="index.js" >
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+
 document.querySelector("#sorting1").addEventListener("click",function (){
             data1.sort(function(a,b){
             return a.rating-b.rating
@@ -108,4 +125,73 @@ document.querySelector("#Signin").addEventListener("click",function(){
 </script>
 </body>
 </html>
+
+<script src="./node_modules/@splidejs/splide/dist/js/splide.min.js">
+</script>
+<script >
+    var splide = new Splide( '.splide', {
+        type    : 'loop',
+        perPage : 1,
+        autoplay: true,
+      } );
+      
+      splide.mount();
+
+console.log("my name is anurag upadhyay")
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+
+
+}
+//   async function searchMovies(){
+//             // who takes us to the server
+//   let response=  await fetch(`https://www.omdbapi.com/?apikey=b1f9ad01&s=hulk&page=1`)  
+//             let  data= await response.json()
+//             let data1=data.Search
+//             console.log(data)
+//             globaldata=data1
+//             //so promise is a gift box?yes 
+//             // response.then(function (success){
+//             // let data=success.json()
+//             //     console.log(data)
+//             //     data.then(function(success){
+//             // console.log(success)
+//             //     })
+//             // }).catch(function(error){
+//             //     console.log(error)
+//             // })
+//             console.log(data1)
+//             document.getElementById("loader").style.display="none"
+//             appendMovies(data1)
+//             }
+// searchMovies()
+
+// function appendMovies(data){
+//             let div1=document.getElementById("container")
+//             div1.innerHTML=null
+//             data.forEach(function(el) {
+//         let div=document.createElement("div")
+//         let image=document.createElement("img")
+//         image.src=el.Poster
+//         let p_name=document.createElement("p")
+//         p_name.innerText=el.Title
+//         let Year1=document.createElement("p")
+//         Year1.innerText=el.Year
+//         div.append(image,p_name,Year1)
+//         div1.append(div)
+//             });
+//         }  
+
+
+
+</script>
+<!--1.enable dark mode-->
+<!--2.sign/signout -->
+<!--3.full responsive -->
 

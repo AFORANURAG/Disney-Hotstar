@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css">
+    <title>testing</title>
+<style>
+img{
+    width:100%;
+    height: 600px;
+}
+body{
+    padding:0;
+    margin: 0;
+}
+</style>
+</head>
+<body>
+    <div class="splide">
+        <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide" data-splide-interval="3000"><img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></li>
+                <li class="splide__slide" data-splide-interval="3000"><img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></li>
+                <li class="splide__slide" data-splide-interval="3000"><img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></li>
+            
+                
+
+              </ul>
+        </div>
+      
+        <div class="splide__progress">
+              <div class="splide__progress__bar">
+              </div>
+        </div>
+      </div>
+
+
+
+
+</body>
+</html>
+<script src="./node_modules/@splidejs/splide/dist/js/splide.min.js">
+</script>
+<script >
+    var splide = new Splide( '.splide', {
+        type    : 'loop',
+        perPage : 1,
+        autoplay: true,
+      } );
+      
+      splide.mount();
+
+console.log("my name is anurag upadhyay")
+
+</script>
+   

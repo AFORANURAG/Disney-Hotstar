@@ -52,7 +52,9 @@ func()
 }
 // debounce essentially is a kind of optimisation. 
 
-
+window.onload=()=>{
+   searchMovies() 
+}
 
 
 // slideshow will be achieved using set interval , so cathcing the images first ,,,
@@ -191,3 +193,5 @@ document.querySelector("#Signin").addEventListener("click",function(){
         })    
 
     
+
+
